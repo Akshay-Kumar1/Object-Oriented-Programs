@@ -6,8 +6,11 @@ fs.readFile('./inventoryMgmt.json', 'utf-8', function (err, data)
     throw err
     var report = JSON.parse(data)
     var sum=0
+    while(1)
+    {
     console.log('1.Insert Stock')
     console.log('2.Delete Stock')
+    console.log('3.Exit')
     var choice = prompt('choice : ')
     switch(choice)
     {
@@ -42,7 +45,10 @@ fs.readFile('./inventoryMgmt.json', 'utf-8', function (err, data)
         })
         break;
 
-    default : console.log('No such option ')
-             process.exit()
+    case '3' : process.exit()
+    
+    default  : console.log('No Such Option')
+               process.exit()
     }
+}
 })
