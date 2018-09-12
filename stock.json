@@ -1,0 +1,8 @@
+{
+"stock" :
+{
+    "Stock_Name"   : ["Berkshire Hathaway","Alphabet","Apple"],
+    "Stock_Shares" : [15,10,7],
+    "Stock_Price"  : [50,70,35]
+}
+}
