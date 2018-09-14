@@ -1,36 +1,12 @@
 var prompt = require('prompt-sync')()
-var fs = require('fs')
-let info = fs.readFileSync('stock.json');  
+var fs = require('fs')  //import file system module
+let info = fs.readFileSync('stock.json');  //read JSON file 
 let stockreport = JSON.parse(info);  
 var sum =0
-for(var i = 0 ;i<=stockreport.stock.Stock_Shares.length-1;i++)
+for(var i = 0 ;i<=stockreport.stock.Stock_Shares.length-1;i++) //loop to iterate the array in JSON file
 {
-    var res = parseInt(stockreport.stock.Stock_Price[i]*stockreport.stock.Stock_Shares[i])
+    var res = parseInt(stockreport.stock.Stock_Price[i]*stockreport.stock.Stock_Shares[i]) //multiplying stockprice with number of shares
     console.log('Total Share_Price of ' +stockreport.stock.Stock_Name[i] +' : ' + res)
-    sum=sum+res
+    sum=sum+res //total sum of share values
 }
-console.log('Total stock Value : ' + sum)
-/*
-class stockmarket
-{
-    constructor(stock_name,stock_shares,stock_price)
-    {
-        this.stock_name=stock_nameadminsitrator@adminsitrator-Vostro-2520:~/Documents/akshayk/Object Oriented/main$
-        this.stock_shares=stock_shares
-        this.stock_price=stock_price
-    }
-}  
-    console.log('Stock Report\n')
-    
-    var stock = new stockmarket('Alphabet',5,100)
-    console.log('Company Name : ' + stock.stock_name);
-    console.log('Number of shares : ' + stock.stock_shares);
-    console.log('Stock Price : ' + stock.stock_price);
-    console.log('Value of Total Share Price of ' + stock.stock_name + ' : ' + stock.stock_price*stock.stock_shares)
-    
-    var stock_ = new stockmarket('Apple',7,10)
-    console.log('\nCompany Name : ' + stock_.stock_name);
-    console.log('Number of shares : ' + stock_.stock_shares);
-    console.log('Stock Price : ' + stock_.stock_price);
-    console.log('Value of Total Share Price of ' + stock_.stock_name + ' : ' + stock_.stock_price*stock_.stock_shares)
-*/
+console.log('Total stock Value : ' + sum) // o/p the sum of all share prices
