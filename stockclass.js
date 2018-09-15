@@ -25,7 +25,7 @@ class StockAccount
             stock_shares: stockshares,
             stock_price: stockprice
             })
-
+            
             //var value =parseInt(stockshares*stockprice)  //calculation of indivisual share value
             //sum=sum+value
             fs.writeFileSync('stockclass.json', JSON.stringify(stock), 'utf-8', function (err) {
@@ -33,7 +33,9 @@ class StockAccount
                 throw err
             })
            // console.log('Total Share Value : '+value)  //o/p the total share value
-        }
+        }   var date = new Date()
+            var time =date.getHours()+':'+date.getMinutes()
+            console.log('Purchase Time : '+ date.getDate()+ ',' +time)
             //console.log('The total value is ' +sum)
     }
     valueof()
@@ -48,6 +50,9 @@ class StockAccount
     }
     printReport()
     {
+        var date = new Date()
+        var time =date.getHours()+':'+date.getMinutes()
+        console.log('Purchase Time : '+ date.getDate()+ ',' +time)
         console.log(stock)
     }
     sell()
@@ -58,7 +63,10 @@ class StockAccount
                 fs.writeFileSync('stockclass.json', JSON.stringify(stock),'utf-8',function(err){
                     if(err)throw err
                 })
-                console.log(stock)  // printing the stock report  
+                console.log(stock)
+                var date = new Date()
+                var time =date.getHours()+':'+date.getMinutes()
+                console.log('Purchase Time : '+ date.getDate()+ ',' +time)  // printing the stock report  
         }
 }                         
 var stockobj =new StockAccount()
@@ -87,6 +95,6 @@ switch (choice)
     case '5' :process.exit()
               
     default : console.log('No Such Option ')
-    break;
+              break;
 }              
 }
