@@ -108,8 +108,5 @@ class LinkedList {
         // console.log(str);
         //return str;
     }
-
-
-
 }
 module.exports = LinkedList;
