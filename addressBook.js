@@ -68,9 +68,9 @@ var data = fs.readFileSync('address.json')
     }
         compare(a,b)
         {
-            if(a.fname<b.fname)
+            if(a.fname.toLowerCase()<b.fname.toLowerCase())
             return -1;
-            if(a.fname>b.fname)
+            if(a.fname.toLowerCase()>b.fname.toLowerCase())
             return 1;
             return 0
         }
